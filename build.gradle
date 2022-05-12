@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+}
+
+group 'com.wql'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+List logging = [
+    "org.slf4j:slf4j-api:1.7.30"
+]
+
+List logback = [
+    "ch.qos.logback:logback-core:1.2.3",
+    "ch.qos.logback:logback-classic:1.2.3",
+]
+
+List rocketmq = [
+    "org.apache.rocketmq:rocketmq-client:4.8.0",
+    "org.apache.rocketmq:rocketmq-broker:4.8.0"
+]
+
+List netty = [
+
+]
+
+List json = [
+    "com.alibaba:fastjson:1.2.76"
+]
+
+dependencies {
+    implementation logging, rocketmq, netty, logback, json
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
